@@ -9,7 +9,9 @@
 
 ## Installation
 1. Install Smarty:
-   * with composer: https://github.com/smarty-php/smarty/blob/master/README.md
+   * using [Composer](https://getcomposer.org/):
+     * [CodeIgniter: Auto-loading Resources](https://www.codeigniter.com/user_guide/general/autoloader.html)
+     * [Installing Smarty with Composer](https://github.com/smarty-php/smarty/blob/master/README.md)
    * or any other way; make sure, that class `Smarty` is available in scope in `JC_Smarty.php`
 2. Copy `JC_Smarty.php` to `application/libraries`
 3. Copy `smarty.php` to `application/config`:

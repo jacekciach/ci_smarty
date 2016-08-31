@@ -1,5 +1,4 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -19,6 +18,11 @@ class JC_Smarty extends Smarty
     parent::__construct();
     $this->CI = get_instance();
 
+    $this->configure();
+  }
+
+  protected function configure()
+  {
     $this->CI->config->load(self::CI_CONFIG, true);
     $config = $this->CI->config->item(self::CI_CONFIG);
 
@@ -41,6 +45,8 @@ class JC_Smarty extends Smarty
     if (isset($config[$key]))
       $this->{$key} = $config[$key];
   }
+
+  /**************************************************************************************************************************************************/
 
   public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
   {

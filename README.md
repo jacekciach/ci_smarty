@@ -71,27 +71,27 @@ class Test extends CI_Controller
 
 ## Customization
 1. Create `MY_Smarty.php` in `application/libraries`
-2. Extend class `JS_Smarty.php`
+2. Extend class `JC_Smarty.php`
 3. Change `config/autoload.php`:
 
    ```php
    $autoload['libraries'] = array(
      ...,
-     'MY_Smarty' => 'smarty' // change this line (notice: MY_Smarty, not JS_Smarty)
+     'MY_Smarty' => 'smarty' // change this line (notice: MY_Smarty, not JC_Smarty)
    );
    ```
 
 #### Example of customization
 ```php
 // application/libraries/MY_Smarty.php
-/* make sure JS_Smarty is in scope */
-class MY_Smarty extends JS_Smarty
+/* make sure JC_Smarty is in scope */
+class MY_Smarty extends JC_Smarty
 {
    // extend existing methods / add new methods
 
-   public function __construct()
+   protected function configure()
    {
-      parent::__construct();
+      parent::configure();
       $this->registerPlugins();
    }
 
